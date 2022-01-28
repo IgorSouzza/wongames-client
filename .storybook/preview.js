@@ -1,7 +1,7 @@
 import { ThemeProvider } from 'styled-components';
 
-import theme from '../src/styles/theme';
-import { GlobalStyle } from '../src/styles/global';
+import theme from 'styles/theme';
+import { GlobalStyle } from 'styles/global';
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },

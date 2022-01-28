@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, css } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -36,19 +36,20 @@ export const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
   }
 
-  html {
-    @media (max-width: 1080px) {
-      font-size: 93.75%;
+  ${({ theme }) => css`
+    html {
+      @media (max-width: 1080px) {
+        font-size: 93.75%;
+      }
+
+      @media (max-width: 720px) {
+        font-size: 87.5%;
+      }
     }
 
-    @media (max-width: 720px) {
-      font-size: 87.5%;
+    body {
+      font-family: ${theme.font.family};
+      font-size: ${theme.font.sizes.medium};
     }
-  }
-
-  body {
-    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    -webkit-font-smoothing: antialiased;
-  }
-
+  `}
 `;

@@ -1,12 +1,15 @@
-import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import type { AppProps } from 'next/app';
+import { ThemeProvider } from 'styled-components';
+
+import theme from 'styles/theme';
 import { GlobalStyle } from 'styles/global';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>React Avançado - Boilerplate</title>
+        <title>Wongames</title>
         <link rel="shortcut icon" href="/img/icon-512.png" />
         <link rel="apple-touch-icon" href="/img/icon-512.png" />
         <link rel="manifest" href="/manifest.json" />
@@ -15,8 +18,10 @@ function MyApp({ Component, pageProps }: AppProps) {
           content="A simple project starter to work with Typescript, React, NextJS and Styled Components"
         />
       </Head>
-      <Component {...pageProps} />
-      <GlobalStyle />
+      <ThemeProvider theme={theme}>
+        <Component {...pageProps} />
+        <GlobalStyle />
+      </ThemeProvider>
     </>
   );
 }

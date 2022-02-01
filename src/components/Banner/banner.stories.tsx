@@ -6,7 +6,7 @@ export default {
   title: 'Banner',
   component: Banner,
   args: {
-    img: 'https://images.igdb.com/igdb/image/upload/t_screenshot_big/scagdr.jpg',
+    img: 'https://i.imgur.com/ORv4wu0.png',
     title: 'Defy death',
     subtitle: '<p>Play the new <strong>CrashLands</strong> season',
     buttonLabel: 'Buy now',

@@ -40,4 +40,21 @@ describe('<Banner />', () => {
 
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  it('should render a ribbon', () => {
+    renderWithTheme(
+      <Banner
+        {...props}
+        ribbon="My Ribbon"
+        ribbonColor="secondary"
+        ribbonSize="small"
+      />,
+    );
+
+    const ribbonElement = screen.getByText(/My Ribbon/i);
+
+    expect(ribbonElement).toBeInTheDocument();
+    expect(ribbonElement).toHaveStyle({ background: '#3CD3C1' });
+    expect(ribbonElement).toHaveStyle({ height: '2.6rem', fontSize: '1.2rem' });
+  });
 });

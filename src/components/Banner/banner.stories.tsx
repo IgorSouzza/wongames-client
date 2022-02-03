@@ -12,13 +12,10 @@ export default {
     buttonLabel: 'Buy now',
     buttonLink: '/games/defy-death',
   },
-  parameters: {
-    layout: 'fullscreen',
-  },
 } as Meta;
 
 export const Default: Story<BannerProps> = (args) => (
-  <div style={{ maxWidth: '130rem', margin: '0 auto' }}>
+  <div style={{ maxWidth: '104rem', margin: '0 auto' }}>
     <Banner {...args} />
   </div>
 );

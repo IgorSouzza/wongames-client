@@ -10,7 +10,7 @@ import Ribbon from 'components/Ribbon';
 import Button from 'components/Button';
 
 export type GameCardProps = {
-  banner: string;
+  img: string;
   title: string;
   developer: string;
   price: string;
@@ -21,7 +21,7 @@ export type GameCardProps = {
 };
 
 export default function GameCard({
-  banner,
+  img,
   title,
   developer,
   price,
@@ -33,7 +33,7 @@ export default function GameCard({
   return (
     <S.Wrapper>
       <S.ImageBox>
-        <img src={banner} alt={title} />
+        <img src={img} alt={title} />
       </S.ImageBox>
       {!!ribbon && <Ribbon size="small">{ribbon}</Ribbon>}
       <S.Content>

@@ -6,7 +6,7 @@ export default {
   title: 'GameCard',
   component: GameCard,
   args: {
-    banner: '/img/project-winter-img.jpg',
+    img: '/img/project-winter-img.jpg',
     title: 'Project Winter',
     developer: 'Other Ocean',
     price: '$215.00',

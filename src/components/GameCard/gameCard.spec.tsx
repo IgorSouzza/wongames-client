@@ -4,7 +4,7 @@ import { renderWithTheme } from 'utils/tests/helpers';
 import GameCard from '.';
 
 const props = {
-  banner: '/img/project-winter-img.jpg',
+  img: '/img/project-winter-img.jpg',
   title: 'Project Winter',
   developer: 'Other Ocean',
   price: '$215.00',
@@ -13,13 +13,13 @@ const props = {
 describe('<GameCard />', () => {
   it('should render default card', () => {
     renderWithTheme(<GameCard {...props} />);
-    const bannerEl = screen.getByRole('img', { name: props.title });
+    const imgEl = screen.getByRole('img', { name: props.title });
     const titleEl = screen.getByRole('heading', { name: props.title });
     const developerEl = screen.getByRole('heading', { name: props.developer });
     const priceEl = screen.getByText('$215.00');
     const favoriteEl = screen.getByLabelText(/Add to wishlist/i);
 
-    expect(bannerEl).toHaveAttribute('src', props.banner);
+    expect(imgEl).toHaveAttribute('src', props.img);
     expect(titleEl).toBeInTheDocument();
     expect(developerEl).toBeInTheDocument();
     expect(priceEl).toBeInTheDocument();

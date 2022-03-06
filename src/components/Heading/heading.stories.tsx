@@ -9,6 +9,11 @@ export default {
       type: 'string',
     },
   },
+  parameters: {
+    backgrounds: {
+      default: 'won-dark',
+    },
+  },
 } as Meta;
 
 export const Default: Story<HeadingProps> = (args) => <Heading {...args} />;

@@ -5,6 +5,11 @@ import Highlight, { HighlightProps } from '.';
 export default {
   title: 'Highlight',
   component: Highlight,
+  parameters: {
+    backgrounds: {
+      default: 'won-dark',
+    },
+  },
   args: {
     title: "Red Dead it's back",
     backgroundImage: '/img/red-dead-img.jpg',

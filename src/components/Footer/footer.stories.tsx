@@ -11,8 +11,3 @@ export const Default: Story = (args) => (
     <Footer {...args} />
   </div>
 );
-Default.parameters = {
-  backgrounds: {
-    default: 'light',
-  },
-};

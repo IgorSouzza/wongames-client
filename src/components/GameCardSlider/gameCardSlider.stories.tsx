@@ -42,6 +42,9 @@ export default {
   args: { items },
   parameters: {
     layout: 'fullscreen',
+    backgrounds: {
+      default: 'won-dark',
+    },
   },
 } as Meta;
 

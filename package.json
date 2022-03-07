@@ -10,7 +10,9 @@
     "prepare": "husky install",
     "test": "jest",
     "test:watch": "jest --watch",
-    "generate": "yarn plop --plopfile ./generators/plopfile.js",
+    "generate": "yarn plop --plopfile ./generators/component-generator.js",
+    "generate:component": "yarn plop --plopfile ./generators/component-generator.js",
+    "generate:page": "yarn plop --plopfile ./generators/page-generator.js",
     "storybook": "start-storybook -s ./public -p 6006",
     "build-storybook": "build-storybook -s ./public"
   },

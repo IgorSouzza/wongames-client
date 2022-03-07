@@ -1,41 +1,8 @@
 import { screen } from '@testing-library/react';
 import { renderWithTheme } from 'utils/tests/helpers';
 
+import items from './mock';
 import GameCardSlider from '.';
-
-const items = [
-  {
-    img: '/img/project-winter-img.jpg',
-    title: 'Project Winter',
-    developer: 'Other Ocean',
-    price: '$215.00',
-    ribbon: 'Bestselling',
-  },
-  {
-    img: '/img/project-winter-img.jpg',
-    title: 'Project Winter',
-    developer: 'Other Ocean',
-    price: '$215.00',
-  },
-  {
-    img: '/img/project-winter-img.jpg',
-    title: 'Project Winter',
-    developer: 'Other Ocean',
-    price: '$215.00',
-  },
-  {
-    img: '/img/project-winter-img.jpg',
-    title: 'Project Winter',
-    developer: 'Other Ocean',
-    price: '$215.00',
-  },
-  {
-    img: '/img/project-winter-img.jpg',
-    title: 'Project Winter',
-    developer: 'Other Ocean',
-    price: '$215.00',
-  },
-];
 
 describe('<GameCardSlider />', () => {
   it('should render 4 initial items', () => {

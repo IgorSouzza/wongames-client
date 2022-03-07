@@ -1,25 +1,8 @@
 import { screen } from '@testing-library/react';
 import { renderWithTheme } from 'utils/tests/helpers';
 
+import items from './mock';
 import BannerSlider from '.';
-
-const items = [
-  {
-    img: '/img/project-winter-img.jpg',
-    title: 'Project Winter',
-    subtitle: '<p>Play the new season',
-    buttonLabel: 'Buy now',
-    buttonLink: '/games/defy-death',
-  },
-  {
-    img: '/img/red-dead-img.jpg',
-    title: 'Red Dead Redemption 2',
-    subtitle: '<p>Play the new Red Dead season',
-    buttonLabel: 'Buy now',
-    buttonLink: '/games/defy-death',
-    ribbon: 'Bestselling',
-  },
-];
 
 describe('<BannerSlider />', () => {
   it('should render vertical slider', () => {
@@ -36,15 +19,15 @@ describe('<BannerSlider />', () => {
     const slickSlide = container.querySelectorAll('.slick-slide');
     const slickActive = container.querySelectorAll('li.slick-active');
     const activeEl = screen.getByRole('heading', {
-      name: /Project Winter/i,
+      name: /red dead redemption 2/i,
       hidden: false,
     });
     const hiddenEl = screen.getByRole('heading', {
-      name: /red dead redemption 2/i,
+      name: /defy death 2/i,
       hidden: true,
     });
 
-    expect(slickSlide).toHaveLength(2);
+    expect(slickSlide).toHaveLength(3);
     expect(slickActive).toHaveLength(1);
     expect(activeEl).toBeInTheDocument();
     expect(hiddenEl).toBeInTheDocument();

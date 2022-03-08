@@ -10,6 +10,9 @@ export default {
       default: 'won-dark',
     },
   },
+  argTypes: {
+    onCheck: { action: 'checked' },
+  },
 } as Meta;
 
 export const Default: Story<CheckboxProps> = (args) => <Checkbox {...args} />;

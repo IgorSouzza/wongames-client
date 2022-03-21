@@ -41,7 +41,7 @@ export const MenuGroup = styled.div`
     justify-content: flex-end;
 
     ${media.greaterThan('medium')`
-      margin-right: ${theme.spacings.xsmall}
+      margin-right: ${theme.spacings.xsmall};
     `}
 
     > div {

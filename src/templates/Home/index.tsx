@@ -4,8 +4,7 @@ import { BannerProps } from 'components/Banner';
 import { GameCardProps } from 'components/GameCard';
 import { HighlightProps } from 'components/Highlight';
 
-import Menu from 'components/Menu';
-import Footer from 'components/Footer';
+import Base from 'templates/Base';
 import Container from 'components/Container';
 import BannerSlider from 'components/BannerSlider';
 import Showcase from 'components/Showcase';
@@ -32,9 +31,8 @@ export default function Home({
   freeGames,
 }: HomeTemplateProps) {
   return (
-    <section>
+    <Base>
       <Container>
-        <Menu />
         <S.SectionBanner>
           <BannerSlider items={banners} />
         </S.SectionBanner>
@@ -62,12 +60,6 @@ export default function Home({
         games={freeGames}
         highlight={freeGamesHighlight}
       />
-
-      <S.SectionFooter>
-        <Container>
-          <Footer />
-        </Container>
-      </S.SectionFooter>
-    </section>
+    </Base>
   );
 }

@@ -17,24 +17,6 @@ const props = {
   freeGames: gamesMock,
 };
 
-jest.mock('components/Menu', () => {
-  return {
-    __esModule: true,
-    default: function Mock() {
-      return <div data-testid="mock-menu"></div>;
-    },
-  };
-});
-
-jest.mock('components/Footer', () => {
-  return {
-    __esModule: true,
-    default: function Mock() {
-      return <div data-testid="mock-footer"></div>;
-    },
-  };
-});
-
 jest.mock('components/Showcase', () => {
   return {
     __esModule: true,
@@ -54,26 +36,13 @@ jest.mock('components/BannerSlider', () => {
 });
 
 describe('<Home />', () => {
-  it('should render menu and footer', () => {
+  it('should render banner and showcases', () => {
     renderWithTheme(<Home {...props} />);
-    const menuElement = screen.getByTestId('mock-menu');
-    const footerElement = screen.getByTestId('mock-footer');
 
-    expect(menuElement).toBeInTheDocument();
-    expect(footerElement).toBeInTheDocument();
-  });
-
-  it('should render all showcases', () => {
-    renderWithTheme(<Home {...props} />);
+    const bannerSliderElement = screen.getByTestId('mock-bannerslider');
     const showcaseElement = screen.getAllByTestId('mock-showcase');
 
-    expect(showcaseElement).toHaveLength(5);
-  });
-
-  it('should render the banner', () => {
-    renderWithTheme(<Home {...props} />);
-    const bannerSliderElement = screen.getByTestId('mock-bannerslider');
-
     expect(bannerSliderElement).toBeInTheDocument();
+    expect(showcaseElement).toHaveLength(5);
   });
 });

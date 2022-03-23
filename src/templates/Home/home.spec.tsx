@@ -17,23 +17,63 @@ const props = {
   freeGames: gamesMock,
 };
 
+jest.mock('components/Menu', () => {
+  return {
+    __esModule: true,
+    default: function Mock() {
+      return <div data-testid="mock-menu"></div>;
+    },
+  };
+});
+
+jest.mock('components/Footer', () => {
+  return {
+    __esModule: true,
+    default: function Mock() {
+      return <div data-testid="mock-footer"></div>;
+    },
+  };
+});
+
+jest.mock('components/Showcase', () => {
+  return {
+    __esModule: true,
+    default: function Mock() {
+      return <div data-testid="mock-showcase"></div>;
+    },
+  };
+});
+
+jest.mock('components/BannerSlider', () => {
+  return {
+    __esModule: true,
+    default: function Mock() {
+      return <div data-testid="mock-bannerslider"></div>;
+    },
+  };
+});
+
 describe('<Home />', () => {
   it('should render menu and footer', () => {
     renderWithTheme(<Home {...props} />);
-    const contactElement = screen.getByRole('heading', { name: /Contact/i });
+    const menuElement = screen.getByTestId('mock-menu');
+    const footerElement = screen.getByTestId('mock-footer');
 
-    expect(screen.getByLabelText(/open menu/i)).toBeInTheDocument();
-    expect(contactElement).toBeInTheDocument();
+    expect(menuElement).toBeInTheDocument();
+    expect(footerElement).toBeInTheDocument();
   });
 
-  it('should render the sections', () => {
+  it('should render all showcases', () => {
     renderWithTheme(<Home {...props} />);
-    const bannerEl = screen.getAllByText(/red dead redemption 2/i);
-    const cardGameEl = screen.getAllByText(/project winter/i);
-    const highlightEl = screen.getAllByText(/red dead is back!/i);
+    const showcaseElement = screen.getAllByTestId('mock-showcase');
 
-    expect(bannerEl).toHaveLength(1);
-    expect(cardGameEl).toHaveLength(20);
-    expect(highlightEl).toHaveLength(3);
+    expect(showcaseElement).toHaveLength(5);
+  });
+
+  it('should render the banner', () => {
+    renderWithTheme(<Home {...props} />);
+    const bannerSliderElement = screen.getByTestId('mock-bannerslider');
+
+    expect(bannerSliderElement).toBeInTheDocument();
   });
 });
